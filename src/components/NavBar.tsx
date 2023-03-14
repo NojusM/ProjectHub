@@ -3,16 +3,16 @@ import { NavLink } from "react-router-dom";
 function NavBar() {
   return (
     <nav>
-      <NavLink to="/" className="button">
+      <NavLink to="/ProjectHub/" className="button">
         Home
       </NavLink>
-      <NavLink to="/checkout" className="button">
+      <NavLink to="/ProjectHub/checkout" className="button">
         Checkout
       </NavLink>
-      <NavLink to="/cards" className="button">
+      <NavLink to="/ProjectHub/cards" className="button">
         Card Game
       </NavLink>
-      <NavLink to="/colors" className="button">
+      <NavLink to="/ProjectHub/colors" className="button">
         Color Game
       </NavLink>
     </nav>
