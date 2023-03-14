@@ -2,7 +2,8 @@
 
 ## Live version
 
-Live version isn't currently available
+Live version is created and autodeployed using _gh-pages_
+It is available on [NojusM ProjectHub](https://nojusm.github.io/ProjectHub/)
 
 ## Demployment
 
