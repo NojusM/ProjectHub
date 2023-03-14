@@ -1,6 +1,4 @@
-# Welcome to "Project Hub"
-
-## By Nojus Makulavičius
+# Welcome to "Project Hub" By Nojus Makulavičius
 
 ## Live version
 
