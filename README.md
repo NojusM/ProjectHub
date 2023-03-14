@@ -2,12 +2,12 @@
 
 ## Live version
 
-Live version is created and autodeployed using **_gh-pages_**. <br />
+Live version is created and auto-deployed using **_gh-pages_**. <br />
 It is available on [NojusM ProjectHub](https://nojusm.github.io/ProjectHub/).
 
-## Demployment
+## Deployment
 
-In the main \ProjectHub folder, open terminal and run command `vite`.
+Open a terminal inside \ProjectHub and run command `vite`.
 
 ## Main technologies and libraries
 
