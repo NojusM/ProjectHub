@@ -16,10 +16,10 @@ function App() {
       <NavBar />
       <Suspense fallback={<Loading />}>
         <Routes>
-          <Route path="/ProjectHub/" element={<Home />} />
-          <Route path="/ProjectHub/checkout" element={<Checkout />} />
-          <Route path="/ProjectHub/cards" element={<CardGame />} />
-          <Route path="/ProjectHub/colors" element={<ColorGame />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/checkout" element={<Checkout />} />
+          <Route path="/cards" element={<CardGame />} />
+          <Route path="/colors" element={<ColorGame />} />
           <Route path="*" element={<BadRoute />} />
         </Routes>
       </Suspense>
