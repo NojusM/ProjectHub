@@ -1,0 +1,29 @@
+.checkouts {
+  margin-top: 2rem;
+  flex-direction: row;
+  gap: 5rem;
+  align-items: flex-start;
+}
+
+.checkout {
+  width: 10rem;
+  height: auto;
+  background-color: black;
+  border: 2px var(--blue) solid;
+  color: white;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.center h1 {
+  font-size: 5rem;
+}
+
+.checkoutForm input {
+  font-size: 2rem;
+  margin: 1rem;
+}
+
+.checkoutForm button {
+  height: 5rem;
+}

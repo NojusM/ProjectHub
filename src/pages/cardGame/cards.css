@@ -1,0 +1,63 @@
+.grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  overflow: hidden;
+  margin-top: 10rem;
+}
+
+.row {
+  display: flex;
+  gap: 2rem;
+}
+
+.card {
+  background-color: hsl(131, 94%, 38%);
+  font-size: 8rem;
+  height: 10rem;
+  width: 6rem;
+  text-align: center;
+  padding: 1rem 1.5rem 3rem 1.5rem;
+  color: transparent;
+  border-image: linear-gradient(white, green, black, green) 10;
+  border-width: 4px;
+  border-style: solid;
+  cursor: pointer;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
+.card:hover {
+  background-color: hsl(131, 94%, 50%);
+  border: red 4px solid;
+}
+
+.card.open {
+  background-color: black;
+  color: white;
+}
+
+.card.open:hover {
+  cursor: auto;
+  border: default;
+}
+
+.card.open.matched {
+  color: green;
+}
+
+.answer {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  margin-top: 3rem;
+  font-size: 3rem;
+  text-align: center;
+  color: red;
+}
+
+.button {
+  padding: 1rem;
+}
