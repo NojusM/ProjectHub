@@ -67,6 +67,18 @@ export default function Checkout() {
 
   return (
     <>
+      <div className="about">
+        <h2>About</h2>
+        <p>
+          "This program aims to make checkout lines more efficient by helping
+          customers find the shortest line possible. By inputting the number of
+          items they have, customers can add themselves to a virtual line, and
+          our program will automatically determine which line is the shortest.
+          To further expedite the checkout process, the program will also reduce
+          the number of items in the first person's line by one every half
+          second, simulating the pace of a real-life checkout experience."
+        </p>
+      </div>
       <div className="center">
         <h1>Checkout</h1>
         <form className="checkoutForm" onSubmit={handleCheckout}>
