@@ -49,6 +49,16 @@ nav a.active {
   justify-content: center;
 }
 
+.about {
+  margin: 5rem 0 0 2rem;
+  width: 30rem;
+  position: absolute;
+  font-size: 1.5rem;
+  text-align: center;
+  background-color: black;
+  border: 2px dotted var(--red);
+}
+
 .badroute {
   font-size: 8rem;
   margin-top: 20rem;
