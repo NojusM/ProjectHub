@@ -1,0 +1,14 @@
+[
+  {
+    "name": "checkout",
+    "about": "This program aims to make checkout lines more efficient by helping customers find the shortest line possible. By inputting the number of items they have, customers can add themselves to a virtual line, and our program will automatically determine which line is the shortest. To further expedite the checkout process, the program will also reduce the number of items in the first person's line by one every half second, simulating the pace of a real-life checkout experience."
+  },
+  {
+    "name": "cardgame",
+    "about": "The game is called \"Match Me\". The objective of the game is to find matching pairs of cards. The board is randomly generated"
+  },
+  {
+    "name": "colorgame",
+    "about": "This game is very simple! Can you match the color to it's hex equivalent"
+  }
+]
