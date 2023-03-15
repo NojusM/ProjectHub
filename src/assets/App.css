@@ -57,6 +57,7 @@ nav a.active {
   text-align: center;
   background-color: black;
   border: 2px dotted var(--red);
+  padding: 1rem;
 }
 
 .badroute {
