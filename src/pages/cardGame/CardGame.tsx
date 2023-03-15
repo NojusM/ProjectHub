@@ -1,7 +1,9 @@
 import { useRef, useState } from "react";
 import "./cards.css";
 import NUMBERS from "../../data/numberPairs.json";
-//CREATE NEW GRID INSTEAD OF MODYFING CURRENT ONE
+import About from "../../components/About";
+import aboutText from "../../data/about.json";
+
 export default function CardGame() {
   const [grid, setGrid] = useState([
     [
@@ -83,6 +85,7 @@ export default function CardGame() {
   }
   return (
     <>
+      <About text={aboutText[1].about} />
       {isPaused.current && (
         <div className="answer">
           <b>Wrong guess!</b>
@@ -125,7 +128,7 @@ export default function CardGame() {
 }
 
 function shuffleArray<T>(array: T[]): T[] {
-  const shuffledArray = [...array]; // Create a copy of the original array
+  const shuffledArray = [...array];
   for (let i = shuffledArray.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];

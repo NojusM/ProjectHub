@@ -1,6 +1,8 @@
 import { useState } from "react";
 import "./color.css";
 import HEX from "../../data/hex.json";
+import About from "../../components/About";
+import aboutText from "../../data/about.json";
 
 export default function ColorGame() {
   const [colors, setColors] = useState(["#FF0000", "#00FF00", "#0000FF"]);
@@ -41,6 +43,7 @@ export default function ColorGame() {
 
   return (
     <>
+      <About text={aboutText[2].about} />
       {alert && (
         <div className={isCorrect ? "answer green" : "answer"}>
           {isCorrect ? "Correct!" : "False!"}
