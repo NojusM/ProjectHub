@@ -38,15 +38,15 @@ export default function Checkout() {
     // });
 
     //CLEANER WAY
-    setCheckouts((prevCheckouts) => {
-      return prevCheckouts.map((checkout, index) => {
+    setCheckouts((prevCheckouts) =>
+      prevCheckouts.map((checkout, index) => {
         if (index === shortestLine.id) {
           return [...checkout, personItems];
         } else {
           return checkout;
         }
-      });
-    });
+      })
+    );
   }
 
   useEffect(() => {
