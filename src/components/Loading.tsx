@@ -1,5 +1,7 @@
+import img from "../assets/loading.gif";
+
 function Loading() {
-  return <div id="loading"></div>;
+  return <img src={img} alt="loading..." className="loading" />;
 }
 
 export default Loading;
