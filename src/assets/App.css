@@ -41,12 +41,12 @@ nav img {
   margin-bottom: 1rem;
   border: 2px var(--blue) dotted;
 }
-
 .loading {
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loading img {
   z-index: 9999999;
   -webkit-filter: invert(1);
   filter: invert(1);
