@@ -42,30 +42,35 @@ export default function ColorGame() {
   }
 
   return (
-    <>
-      <About text={aboutText[2].about} />
-      {alert && (
-        <div className={isCorrect ? "answer green" : "answer"}>
-          {isCorrect ? "Correct!" : "False!"}
-        </div>
-      )}
-      <div className="colorGame">
-        <div className="color" style={{ backgroundColor: answer }}></div>
-        <div>
-          {colors.map((color, index) => (
-            <button
-              key={index}
-              disabled={disabledButtons[index]}
-              className="button"
-              onClick={() => {
-                handleColorPick(color, index);
-              }}
-            >
-              {color}
-            </button>
-          ))}
-        </div>
+    <div className="grid-wrapper">
+      <div className="about-section">
+        <About text={aboutText[2].about} />
       </div>
-    </>
+      <div className="game-section">
+        <div className="colorGame">
+          {alert && (
+            <div className={isCorrect ? "color-answer green" : "color-answer"}>
+              {isCorrect ? "Correct!" : "False!"}
+            </div>
+          )}
+          <div className="color" style={{ backgroundColor: answer }} />
+          <div>
+            {colors.map((color, index) => (
+              <button
+                key={index}
+                disabled={disabledButtons[index]}
+                className="button"
+                onClick={() => {
+                  handleColorPick(color, index);
+                }}
+              >
+                {color}
+              </button>
+            ))}
+          </div>
+        </div>
+        <div className="extra-section"></div>
+      </div>
+    </div>
   );
 }
