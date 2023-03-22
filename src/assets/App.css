@@ -73,3 +73,15 @@ nav img {
   font-size: 8rem;
   margin-top: 20rem;
 }
+
+.grid-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 2rem;
+}
+
+@media (max-width: 600px) {
+  .grid-wrapper {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,9 +1,3 @@
-.grid-wrapper {
-  display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
-  gap: 2rem;
-}
-
 .colorGame {
   display: flex;
   flex-direction: column;
@@ -46,10 +40,4 @@
 
 .color-answer.green {
   color: green;
-}
-
-@media (max-width: 600px) {
-  .grid-wrapper {
-    grid-template-columns: 1fr;
-  }
 }
