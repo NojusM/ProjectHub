@@ -84,46 +84,51 @@ export default function CardGame() {
     oldClick.current = null;
   }
   return (
-    <>
-      <About text={aboutText[1].about} />
-      {isPaused.current && (
-        <div className="answer">
-          <b>Wrong guess!</b>
-        </div>
-      )}
-      <div className="grid">
-        {grid.map((row, rowIndex) => (
-          <div key={rowIndex} className="row">
-            {row.map((number, colIndex) => (
-              <div
-                key={colIndex}
-                className={
-                  number.matched
-                    ? "card open matched"
-                    : number.open
-                    ? "card open"
-                    : "card"
-                }
-                onClick={
-                  isPaused.current
-                    ? function () {}
-                    : number.matched
-                    ? function () {}
-                    : () => handleCardClicked(rowIndex, colIndex)
-                }
-              >
-                {number.value}
-              </div>
-            ))}
-          </div>
-        ))}
+    <div className="grid-wrapper">
+      <div className="about-section">
+        <About text={aboutText[1].about} />
       </div>
-      <div>
-        <button className="button" onClick={() => shuffleCards()}>
+      <div className="game-section">
+        <div className="grid">
+          {isPaused.current && (
+            <div className="card-answer">
+              <b>Wrong guess!</b>
+            </div>
+          )}
+          {grid.map((row, rowIndex) => (
+            <div key={rowIndex} className="row">
+              {row.map((number, colIndex) => (
+                <div
+                  key={colIndex}
+                  className={
+                    number.matched
+                      ? "card open matched"
+                      : number.open
+                      ? "card open"
+                      : "card"
+                  }
+                  onClick={
+                    isPaused.current
+                      ? function () {}
+                      : number.matched
+                      ? function () {}
+                      : () => handleCardClicked(rowIndex, colIndex)
+                  }
+                >
+                  {number.value}
+                </div>
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="extra-section">
+        <button className="button restart" onClick={() => shuffleCards()}>
           Restart
         </button>
       </div>
-    </>
+    </div>
   );
 }
 

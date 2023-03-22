@@ -1,24 +1,15 @@
 .grid {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
-  overflow: hidden;
-  margin-top: 10rem;
-}
-
-.row {
-  display: flex;
-  gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  padding-top: 5rem;
+  position: relative;
 }
 
 .card {
   background-color: hsl(131, 94%, 38%);
   font-size: 8rem;
-  height: 10rem;
-  width: 6rem;
   text-align: center;
-  padding: 1rem 1.5rem 3rem 1.5rem;
   color: transparent;
   border-image: linear-gradient(white, green, black, green) 10;
   border-width: 4px;
@@ -48,16 +39,24 @@
   color: green;
 }
 
-.answer {
+.card-answer {
   position: absolute;
-  width: 100%;
-  left: 0;
-  margin-top: 3rem;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
   font-size: 3rem;
-  text-align: center;
   color: red;
+  z-index: 2;
 }
 
-.button {
+.restart {
+  width: 100%;
+  margin-top: 5rem;
   padding: 1rem;
+}
+
+@media (max-width: 600px) {
+  .restart {
+    margin-top: 1rem;
+  }
 }
