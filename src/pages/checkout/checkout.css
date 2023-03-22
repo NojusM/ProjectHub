@@ -1,13 +1,22 @@
+.checkout-section {
+  display: flex;
+  justify-content: top;
+  align-items: center;
+  flex-direction: column;
+}
+
 .checkouts {
-  margin-top: 2rem;
+  display: flex;
   flex-direction: row;
-  gap: 5rem;
-  align-items: flex-start;
+  height: auto;
+  width: 100%;
 }
 
 .checkout {
-  width: 10rem;
+  width: 100%;
   height: auto;
+  margin: 2rem 1rem 0 1rem;
+  box-sizing: border-box;
   background-color: black;
   border: 2px var(--blue) solid;
   color: white;
@@ -15,15 +24,32 @@
   text-align: center;
 }
 
-.center h1 {
+.checkout-section h1 {
   font-size: 5rem;
+}
+
+.checkoutForm {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
 }
 
 .checkoutForm input {
   font-size: 2rem;
-  margin: 1rem;
+  width: 50%;
 }
 
 .checkoutForm button {
-  height: 5rem;
+  padding: 1rem;
+  width: 50%;
+}
+
+@media (max-width: 600px) {
+  .checkoutForm {
+    flex-direction: column;
+  }
+
+  form.checkoutForm > * {
+    width: 100%;
+  }
 }

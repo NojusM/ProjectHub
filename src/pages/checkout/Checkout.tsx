@@ -68,9 +68,12 @@ export default function Checkout() {
   });
 
   return (
-    <>
-      <About text={aboutText[0].about} />
-      <div className="center">
+    <div className="grid-wrapper">
+      <div className="about-section">
+        <About text={aboutText[0].about} />
+      </div>
+
+      <div className="checkout-section">
         <h1>Checkout</h1>
         <form className="checkoutForm" onSubmit={handleCheckout}>
           <input
@@ -81,16 +84,18 @@ export default function Checkout() {
           />
           <button className="button">Add to line</button>
         </form>
+
+        <div className="checkouts">
+          {checkouts.map((checkout, index) => (
+            <div key={index} className="checkout">
+              {checkout.map((number, id) => {
+                return <div key={id}>{number} </div>;
+              })}
+            </div>
+          ))}
+        </div>
       </div>
-      <div className="center checkouts">
-        {checkouts.map((checkout, index) => (
-          <div key={index} className="checkout">
-            {checkout.map((number, id) => {
-              return <div key={id}>{number}, </div>;
-            })}
-          </div>
-        ))}
-      </div>
-    </>
+      <div className="extra-section"></div>
+    </div>
   );
 }
