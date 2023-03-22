@@ -2,12 +2,15 @@
   font-size: 2rem;
 }
 
+div.home > * {
+  text-align: center;
+}
+
 .image {
   animation: anim 30s infinite;
   background: url(/src/assets/me.png);
   background-size: contain;
   border-radius: 30% 70% 53% 47% / 26% 46% 54% 74%;
-  content: "";
   height: 40vmin;
   width: 40vmin;
 }
