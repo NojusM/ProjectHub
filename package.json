@@ -1,7 +1,7 @@
 {
-  "name": "learnapp",
+  "name": "ProjectHub",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "homepage": "https://nojusm.github.io/ProjectHub",
   "type": "module",
   "scripts": {
