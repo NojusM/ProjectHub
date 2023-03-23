@@ -15,32 +15,6 @@
   border: 2px solid black;
 }
 
-nav {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 2rem;
-  margin: 1rem 0 2rem 0;
-  border-bottom: 2px solid black;
-}
-
-nav a {
-  text-decoration: none;
-  font-size: 2.5rem;
-  color: black;
-  margin: auto;
-}
-
-nav a.active {
-  color: var(--blue);
-}
-
-nav img {
-  max-width: 100px;
-  max-height: 100px;
-  margin-bottom: 1rem;
-  border: 2px var(--blue) dotted;
-}
 .loading {
   display: flex;
   justify-content: center;
@@ -78,6 +52,69 @@ nav img {
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
   gap: 2rem;
+}
+
+nav {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 2rem;
+  margin: 1rem 0 2rem 0;
+  border-bottom: 2px solid black;
+}
+
+nav a {
+  text-decoration: none;
+  font-size: 2.5rem;
+  color: var(--blue);
+  margin: auto;
+}
+
+.dropdown-container {
+  position: relative;
+  margin: auto;
+}
+
+.dropdown-button {
+  color: var(--blue);
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 95%;
+  left: 0;
+  z-index: 2;
+  background-color: white;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border: 1px solid black;
+  border-top: none;
+  min-width: 100%;
+  width: auto;
+  text-align: center;
+}
+
+.dropdown-menu li {
+  padding: 12px;
+  cursor: pointer;
+}
+
+.dropdown-menu li:hover {
+  background-color: hsl(0, 0%, 80%);
+}
+
+.dropdown-menu li:hover > a {
+  text-decoration: underline;
+  color: var(--blue);
+}
+
+.dropdown-menu a {
+  color: #333;
+  font-size: 2rem;
+  text-decoration: none;
 }
 
 @media (max-width: 600px) {
