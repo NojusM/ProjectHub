@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import DropdownMenu from "./Dropdown";
 
-function NavBar() {
+export default function NavBar() {
   return (
     <nav>
       <NavLink to="/">Home</NavLink>
@@ -10,8 +10,6 @@ function NavBar() {
     </nav>
   );
 }
-
-export default NavBar;
 
 const URLs = {
   websites: [],
