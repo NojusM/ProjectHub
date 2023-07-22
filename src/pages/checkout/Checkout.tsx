@@ -29,17 +29,6 @@ export default function Checkout() {
       }
     });
 
-    //FASTER WAY
-    // setCheckouts((prevCheckouts) => {
-    //   var tempCheckouts = [...prevCheckouts];
-    //   tempCheckouts[shortestLine.id] = [
-    //     ...tempCheckouts[shortestLine.id],
-    //     personItems,
-    //   ];
-    //   return tempCheckouts;
-    // });
-
-    //CLEANER WAY
     setCheckouts((prevCheckouts) =>
       prevCheckouts.map((checkout, index) => {
         if (index === shortestLine.id) {
@@ -67,6 +56,13 @@ export default function Checkout() {
     };
   });
 
+  function handleAddToLine(e: React.ChangeEvent<HTMLInputElement>) {
+    const value = e.currentTarget.valueAsNumber;
+    if (value < 0) return;
+
+    setPersonItems(value);
+  }
+
   return (
     <div className="grid-wrapper">
       <div className="about-section">
@@ -80,7 +76,7 @@ export default function Checkout() {
             required
             type="number"
             placeholder="Number of items"
-            onChange={(e) => setPersonItems(e.currentTarget.valueAsNumber)}
+            onChange={handleAddToLine}
           />
           <button className="button">Add to line</button>
         </form>
