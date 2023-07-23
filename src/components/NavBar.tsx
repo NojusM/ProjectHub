@@ -5,6 +5,7 @@ export default function NavBar() {
   return (
     <nav>
       <NavLink to="/">Home</NavLink>
+      <DropdownMenu name={"Websites"} links={URLs.websites} />
       <DropdownMenu name={"Games"} links={URLs.games} />
       <DropdownMenu name={"Functional puzzles"} links={URLs.puzzles} />
     </nav>
@@ -12,7 +13,7 @@ export default function NavBar() {
 }
 
 const URLs = {
-  websites: [],
+  websites: [{ title: "Pokemon Shop", url: "pokeshop" }],
   games: [
     { title: "Match Me!", url: "cards" },
     { title: "Color Guess", url: "colors" },
