@@ -1,1 +1,0 @@
-import{r as o,j as e}from"./index-2c1d24ad.js";const t="https://pokeapi.co/api/v2/";async function s(){try{return await fetch(`${t}/pokemon-species/2`)}catch{console.error("Failed to fetch pokemon")}}function c(){return o.useEffect(()=>{console.log(s())}),e.jsx("div",{children:"Pokeshop"})}export{c as default};
