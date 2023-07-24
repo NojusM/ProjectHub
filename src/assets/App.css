@@ -84,11 +84,11 @@ nav a {
   top: 95%;
   left: 0;
   z-index: 2;
-  background-color: transparent;
+  background-color: white;
   list-style: none;
   padding: 0;
   margin: 0;
-  border: 1px solid white;
+  border: 1px solid var(--blue);
   border-top: none;
   min-width: 100%;
   width: auto;
@@ -110,7 +110,7 @@ nav a {
 }
 
 .dropdown-menu a {
-  color: white;
+  color: var(--blue);
   font-size: 2rem;
   text-decoration: none;
 }
