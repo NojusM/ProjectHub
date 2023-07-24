@@ -1,22 +1,25 @@
+import { SortRange } from "../../../types/pokeshopTypes";
+
 interface Props {
   label: string;
-  data: [number, number];
-  setData: React.Dispatch<React.SetStateAction<[number, number]>>;
+  data: SortRange;
+  setData: React.Dispatch<React.SetStateAction<SortRange>>;
+  units: string;
 }
 
-export default function Range({ label, data, setData }: Props) {
+export default function Range({ label, data, setData, units }: Props) {
   const handleRangeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = parseInt(e.target.value);
     if (e.target.name === "min") {
-      setData((current) => [value, current[1]]);
-      if (value > data[1]) {
-        setData((current) => [current[0], value]);
+      if (value > data.userMax) {
+        setData((current) => ({ ...current, userMax: value, userMin: value }));
       }
+      setData((current) => ({ ...current, userMin: value }));
     } else if (e.target.name === "max") {
-      setData((current) => [current[0], value]);
-      if (value < data[0]) {
-        setData((current) => [value, current[1]]);
+      if (value < data.userMin) {
+        setData((current) => ({ ...current, userMax: value, userMin: value }));
       }
+      setData((current) => ({ ...current, userMax: value }));
     }
   };
 
@@ -27,21 +30,24 @@ export default function Range({ label, data, setData }: Props) {
         type="range"
         id="range"
         name="min"
-        min={0}
-        max={100}
-        value={data[0]}
+        min={data.dataMin}
+        max={data.dataMax}
+        value={data.userMin}
         onChange={handleRangeChange}
       />
       <input
         type="range"
         name="max"
-        min={0}
-        max={100}
-        value={data[1]}
+        min={data.dataMin}
+        max={data.dataMax}
+        value={data.userMax}
         onChange={handleRangeChange}
       />
       <div className="range-text">
-        <span>{data[0]}</span> - <span>{data[1]}</span>
+        <span>{data.userMin}</span> -{" "}
+        <span>
+          {data.userMax} {units}
+        </span>
       </div>
     </div>
   );
