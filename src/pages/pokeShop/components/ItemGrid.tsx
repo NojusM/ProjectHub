@@ -36,10 +36,10 @@ export default function ItemGrid({ data }: Props) {
               <p>{item.name}</p>
               <img src={item.sprites.front_default} />
               <div className="pokemon-content-info">
-                <p>{item.price} $</p>
-                <p>{item.height} dm</p>
-                <p>{item.weight} hg</p>
-                <p>{item.base_experience} xp</p>
+                <p>{item.price}$</p>
+                <p>{item.height}dm</p>
+                <p>{item.weight}hg</p>
+                <p>{item.base_experience}xp</p>
               </div>
             </div>
           </div>
