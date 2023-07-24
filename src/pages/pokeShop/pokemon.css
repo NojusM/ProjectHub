@@ -13,7 +13,9 @@
 .pokemon-grid-item {
   position: relative;
   padding-bottom: 100%;
-  border: 1px solid black;
+  border: 2px solid white;
+  background-color: rgb(2, 49, 31);
+  color: white;
 }
 
 .pokemon-content {
@@ -43,13 +45,10 @@
   margin: 1rem 2rem 1rem 2rem;
 }
 
-.pokeshop-buttons button {
-  background-color: white;
-}
-
 .pokeshop-page-number {
   font-size: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
+  color: white;
 }
