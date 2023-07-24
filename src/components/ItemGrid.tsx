@@ -17,11 +17,11 @@ export default function ItemGrid({ data }: Props) {
     <div className="pokeshop-wrapper">
       <div className="pokeshop-items">
         <ul className="pokemon-grid-wrapper">
-          {paginatedData.map((pokemon: any) => (
-            <div key={pokemon.name} className="pokemon-grid-item">
+          {paginatedData.map((item: any) => (
+            <div key={item.name} className="pokemon-grid-item">
               <div className="pokemon-content">
-                <p>{pokemon.name}</p>
-                <img src={pokemon.sprites.front_default} />
+                <p>{item.name}</p>
+                <img src={item.sprites.front_default} />
               </div>
             </div>
           ))}
