@@ -4,6 +4,13 @@
   grid-template-columns: 1fr 4fr;
 }
 
+.pokeshop-title {
+  font-size: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .pokemon-grid-wrapper {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));

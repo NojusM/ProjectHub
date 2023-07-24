@@ -25,9 +25,12 @@ export default function PokemonList() {
   }
 
   return (
-    <div className="pokeshop-wrapper">
-      <Sidebar pokemon={pokemonData?.pokemon} />
-      <ItemGrid data={pokemonData?.pokemon} />
-    </div>
+    <>
+      <div className="pokeshop-title">Pokeshop</div>
+      <div className="pokeshop-wrapper">
+        <Sidebar pokemon={pokemonData?.pokemon} />
+        <ItemGrid data={pokemonData?.pokemon} />
+      </div>
+    </>
   );
 }
