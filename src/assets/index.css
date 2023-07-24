@@ -19,5 +19,6 @@
   --cyan: #13e7e7;
   --background: #053538;
 
+  color: white;
   background-color: var(--background);
 }
