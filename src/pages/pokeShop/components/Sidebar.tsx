@@ -11,21 +11,23 @@ export default function Sidebar() {
   return (
     <div className="sidebar-wrapper">
       <div className="sort">
-        Sort:
-        <button
-          className={sortAsc ? "button active" : "button"}
-          disabled={sortAsc}
-          onClick={() => setSortAsc(true)}
-        >
-          ASC
-        </button>
-        <button
-          className={sortAsc ? "button" : "button active"}
-          disabled={!sortAsc}
-          onClick={() => setSortAsc(false)}
-        >
-          DESC
-        </button>
+        <label>Sort</label>
+        <div className="sort-buttons">
+          <button
+            className={sortAsc ? "button active" : "button"}
+            disabled={sortAsc}
+            onClick={() => setSortAsc(true)}
+          >
+            ASC
+          </button>
+          <button
+            className={sortAsc ? "button" : "button active"}
+            disabled={!sortAsc}
+            onClick={() => setSortAsc(false)}
+          >
+            DESC
+          </button>
+        </div>
       </div>
       <div className="price">
         <Range label="Price:" data={price} setData={setPrice} />
