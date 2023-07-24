@@ -79,8 +79,13 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
   border-bottom: 2px solid var(--blue);
+}
+
+.sidebar-item:last-child {
+  border-bottom: none;
 }
 
 /* SORT */
@@ -128,7 +133,7 @@
   background: #d3d3d3;
   border-radius: 0.5rem;
   outline: 1px solid var(--blue);
-  margin-bottom: 1rem;
+  margin: 1rem 0 1rem 0;
 }
 
 /* Styling for the knob */
