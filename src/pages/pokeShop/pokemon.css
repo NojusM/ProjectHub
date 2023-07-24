@@ -74,14 +74,16 @@
   font-size: 2rem;
 }
 
-/* SORT */
-.sort {
+.sidebar-item {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   margin-bottom: 1rem;
+  border-bottom: 2px solid var(--blue);
 }
+
+/* SORT */
 
 .sort-buttons {
   display: flex;
@@ -107,3 +109,50 @@
 }
 
 /* RANGE */
+
+.range-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  width: 90%;
+}
+
+/* Styling for the input range */
+.range-wrapper input {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 1.5rem;
+  background: #d3d3d3;
+  border-radius: 0.5rem;
+  outline: 1px solid var(--blue);
+  margin-bottom: 1rem;
+}
+
+/* Styling for the knob */
+.range-wrapper input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 2.2rem;
+  height: 2.2rem;
+  background: var(--blue);
+  border-radius: 50%;
+  cursor: pointer;
+  transform: translateY(-25%);
+  border: 2px solid black;
+}
+
+/* Styling for the knob when active */
+.range-wrapper input::-webkit-slider-thumb:hover {
+  background: var(--red);
+}
+
+/* Styling for the range track */
+.range-wrapper input::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 1rem;
+  background: #d3d3d3;
+  border-radius: 0.5rem;
+}

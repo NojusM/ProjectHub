@@ -40,7 +40,9 @@ export default function Range({ label, data, setData }: Props) {
         value={data[1]}
         onChange={handleRangeChange}
       />
-      <span>{data[0]}</span> - <span>{data[1]}</span>
+      <div className="range-text">
+        <span>{data[0]}</span> - <span>{data[1]}</span>
+      </div>
     </div>
   );
 }

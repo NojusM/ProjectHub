@@ -10,7 +10,7 @@ export default function Sidebar() {
 
   return (
     <div className="sidebar-wrapper">
-      <div className="sort">
+      <div className="sidebar-item">
         <label>Sort</label>
         <div className="sort-buttons">
           <button
@@ -29,17 +29,17 @@ export default function Sidebar() {
           </button>
         </div>
       </div>
-      <div className="price">
-        <Range label="Price:" data={price} setData={setPrice} />
+      <div className="sidebar-item">
+        <Range label="Price" data={price} setData={setPrice} />
       </div>
-      <div className="baseExp">
-        <Range label="Base experience:" data={baseExp} setData={setBaseExp} />
+      <div className="sidebar-item">
+        <Range label="Base experience" data={baseExp} setData={setBaseExp} />
       </div>
-      <div className="height">
-        <Range label="Height:" data={height} setData={setHeight} />
+      <div className="sidebar-item">
+        <Range label="Height" data={height} setData={setHeight} />
       </div>
-      <div className="weight">
-        <Range label="Weight:" data={weight} setData={setWeight} />
+      <div className="sidebar-item">
+        <Range label="Weight" data={weight} setData={setWeight} />
       </div>
     </div>
   );
