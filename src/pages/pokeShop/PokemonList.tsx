@@ -1,14 +1,15 @@
 import { useQuery } from "react-query";
-import { getPokemonByPage } from "./getPokemon";
+import { getPokemon } from "./api/getPokemon";
 import "./pokemon.css";
-import ItemGrid from "../../components/ItemGrid";
+import ItemGrid from "./components/ItemGrid";
+import Sidebar from "./components/Sidebar";
 
 export default function PokemonList() {
   const {
     data: pokemonData,
     isLoading,
     error,
-  } = useQuery("pokemon", () => getPokemonByPage());
+  } = useQuery("pokemon", () => getPokemon());
 
   if (isLoading) {
     return <div>Loading...</div>;
@@ -18,5 +19,10 @@ export default function PokemonList() {
     return <div>Failed to find Pokemon</div>;
   }
 
-  return <ItemGrid data={pokemonData?.pokemon} />;
+  return (
+    <div className="pokeshop-wrapper">
+      <Sidebar />
+      <ItemGrid data={pokemonData?.pokemon} />
+    </div>
+  );
 }

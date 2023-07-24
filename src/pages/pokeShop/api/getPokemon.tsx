@@ -2,7 +2,7 @@ import axios from "axios";
 
 const POKEMON_API = "https://pokeapi.co/api/v2/pokemon";
 
-export async function getPokemonByPage() {
+export async function getPokemon() {
   try {
     const response = await axios.get(`${POKEMON_API}?limit=1000`);
     const data = response.data;
