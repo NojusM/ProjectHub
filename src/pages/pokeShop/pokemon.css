@@ -15,7 +15,6 @@
   padding-bottom: 100%;
   border: 2px solid white;
   background-color: rgb(2, 49, 31);
-  color: white;
 }
 
 .pokemon-content {
@@ -50,5 +49,4 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
 }
