@@ -16,11 +16,17 @@ export default function Sidebar() {
         <button className="button">DESC</button>
       </div>
       <div className="price">
-        <Range label="Price Range:" data={price} setData={setPrice} />
+        <Range label="Price:" data={price} setData={setPrice} />
       </div>
-      <div className="baseExp"></div>
-      <div className="height"></div>
-      <div className="weight"></div>
+      <div className="baseExp">
+        <Range label="Base experience:" data={baseExp} setData={setBaseExp} />
+      </div>
+      <div className="height">
+        <Range label="Height:" data={height} setData={setHeight} />
+      </div>
+      <div className="weight">
+        <Range label="Weight:" data={weight} setData={setWeight} />
+      </div>
     </div>
   );
 }
