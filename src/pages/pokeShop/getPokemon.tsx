@@ -2,11 +2,9 @@ import axios from "axios";
 
 const POKEMON_API = "https://pokeapi.co/api/v2/pokemon";
 
-export async function getPokemonByPage(page: number) {
+export async function getPokemonByPage() {
   try {
-    const response = await axios.get(
-      `${POKEMON_API}?offset=${(page - 1) * 20}&limit=20`
-    );
+    const response = await axios.get(`${POKEMON_API}?limit=1000`);
     const data = response.data;
 
     const extraInfoResponses = await Promise.all(

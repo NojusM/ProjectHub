@@ -1,16 +1,12 @@
+import { useState } from "react";
+
 interface Props {
   data: any;
-  currentPage: number;
-  nextPage: any;
-  setCurrentPage: React.Dispatch<React.SetStateAction<number>>;
 }
 
-export default function ItemGrid({
-  data,
-  currentPage,
-  nextPage,
-  setCurrentPage,
-}: Props) {
+export default function ItemGrid({ data }: Props) {
+  const [currentPage, setCurrentPage] = useState(1);
+
   return (
     <div className="pokeshop-wrapper">
       <div className="pokeshop-items">
@@ -36,7 +32,6 @@ export default function ItemGrid({
           <button
             className="button"
             onClick={() => setCurrentPage((prev) => prev + 1)}
-            disabled={!nextPage}
           >
             Next Page
           </button>

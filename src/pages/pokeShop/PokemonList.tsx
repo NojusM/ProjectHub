@@ -5,12 +5,11 @@ import "./pokemon.css";
 import ItemGrid from "../../components/ItemGrid";
 
 export default function PokemonList() {
-  const [currentPage, setCurrentPage] = useState(1);
   const {
     data: pokemonData,
     isLoading,
     error,
-  } = useQuery(["pokemon", currentPage], () => getPokemonByPage(currentPage));
+  } = useQuery("pokemon", () => getPokemonByPage());
 
   if (isLoading) {
     return <div>Loading...</div>;
@@ -20,12 +19,5 @@ export default function PokemonList() {
     return <div>Failed to find Pokemon</div>;
   }
 
-  return (
-    <ItemGrid
-      data={pokemonData?.pokemon}
-      currentPage={currentPage}
-      nextPage={pokemonData?.next}
-      setCurrentPage={setCurrentPage}
-    />
-  );
+  return <ItemGrid data={pokemonData?.pokemon} />;
 }
