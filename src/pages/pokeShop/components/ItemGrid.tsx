@@ -15,6 +15,18 @@ export default function ItemGrid({ data }: Props) {
 
   return (
     <div className="pokeshop-items">
+      <label className="items-per-page">
+        Items per page:
+        <select
+          value={itemsPerPage}
+          onChange={(e) => setItemsPerPage(Number(e.target.value))}
+        >
+          <option value={10}>10</option>
+          <option value={20}>20</option>
+          <option value={50}>50</option>
+          <option value={100}>100</option>
+        </select>
+      </label>
       <ul className="pokemon-grid-wrapper">
         {paginatedData.map((item: any) => (
           <div key={item.name} className="pokemon-grid-item">
@@ -42,20 +54,7 @@ export default function ItemGrid({ data }: Props) {
           Next Page
         </button>
       </div>
-      <div className="pokeshop-item-limit">
-        <label>
-          Items per page:
-          <select
-            value={itemsPerPage}
-            onChange={(e) => setItemsPerPage(Number(e.target.value))}
-          >
-            <option value={10}>10</option>
-            <option value={20}>20</option>
-            <option value={50}>50</option>
-            <option value={100}>100</option>
-          </select>
-        </label>
-      </div>
+      <div className="pokeshop-item-limit"></div>
     </div>
   );
 }
