@@ -14,11 +14,11 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 
-  --blue: #039651;
+  --blue: #54d88b;
   --red: #4d0505;
   --cyan: #13e7e7;
-  --dark-green: #02311f;
-  --background: #053538;
+  --dark-green: #0b2b1e;
+  --background: #052629;
 
   color: white;
   background-color: var(--background);
