@@ -4,7 +4,7 @@ const POKEMON_API = "https://pokeapi.co/api/v2/pokemon";
 
 export async function getPokemon() {
   try {
-    const response = await axios.get(`${POKEMON_API}?limit=1000`);
+    const response = await axios.get(`${POKEMON_API}?limit=500`);
     const data = response.data;
 
     const extraInfoResponses = await Promise.all(

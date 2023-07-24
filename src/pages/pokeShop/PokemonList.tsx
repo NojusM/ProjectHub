@@ -9,7 +9,11 @@ export default function PokemonList() {
     data: pokemonData,
     isLoading,
     error,
-  } = useQuery("pokemon", () => getPokemon());
+  } = useQuery("pokemon", () => getPokemon(), {
+    refetchOnMount: true,
+    refetchOnWindowFocus: false,
+    refetchOnReconnect: true,
+  });
 
   if (isLoading) {
     return <div>Loading...</div>;
