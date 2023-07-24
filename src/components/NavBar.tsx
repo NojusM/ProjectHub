@@ -3,7 +3,7 @@ import DropdownMenu from "./Dropdown";
 
 export default function NavBar() {
   return (
-    <nav>
+    <nav className="nav">
       <NavLink to="/">Home</NavLink>
       <DropdownMenu name={"Websites"} links={URLs.websites} />
       <DropdownMenu name={"Games"} links={URLs.games} />
