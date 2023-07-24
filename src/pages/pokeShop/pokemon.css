@@ -1,7 +1,7 @@
 .pokeshop-wrapper {
   margin: 0;
   display: grid;
-  grid-template-columns: 1fr 5fr;
+  grid-template-columns: 1fr 4fr;
 }
 
 .pokemon-grid-wrapper {
