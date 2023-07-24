@@ -2,7 +2,7 @@ import { useQuery } from "react-query";
 import { getPokemon } from "./api/getPokemon";
 import "./pokemon.css";
 import ItemGrid from "./components/ItemGrid";
-import Sidebar from "./components/Sidebar";
+import Sidebar from "./Sidebar";
 import Loading from "../../components/Loading";
 
 export default function PokemonList() {

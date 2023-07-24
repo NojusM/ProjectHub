@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Range from "./Range";
+import Range from "./components/Range";
 
 export default function Sidebar() {
   const [sortAsc, setSortAsc] = useState(true);
