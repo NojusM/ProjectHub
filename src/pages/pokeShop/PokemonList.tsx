@@ -1,6 +1,5 @@
 import { useQuery } from "react-query";
 import { getPokemonByPage } from "./getPokemon";
-import { useState } from "react";
 import "./pokemon.css";
 import ItemGrid from "../../components/ItemGrid";
 
