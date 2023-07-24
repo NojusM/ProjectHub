@@ -3,6 +3,7 @@ import { getPokemon } from "./api/getPokemon";
 import "./pokemon.css";
 import ItemGrid from "./components/ItemGrid";
 import Sidebar from "./components/Sidebar";
+import Loading from "../../components/Loading";
 
 export default function PokemonList() {
   const {
@@ -16,7 +17,7 @@ export default function PokemonList() {
   });
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <Loading />;
   }
 
   if (error) {
