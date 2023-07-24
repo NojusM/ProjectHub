@@ -4,6 +4,8 @@ import "./pokemon.css";
 import ItemGrid from "./components/ItemGrid";
 import Sidebar from "./Sidebar";
 import Loading from "../../components/Loading";
+import PokeshopNavbar from "./components/PokeshopNavbar";
+import { Route, Routes } from "react-router-dom";
 
 export default function PokemonList() {
   const {
@@ -27,10 +29,18 @@ export default function PokemonList() {
   return (
     <>
       <div className="pokeshop-title">Pokeshop</div>
-      <div className="pokemonshop-wrapper">
-        <Sidebar pokemon={pokemonData?.pokemon} />
-        <ItemGrid data={pokemonData?.pokemon} />
-      </div>
+      <PokeshopNavbar />
+      <Routes>
+        <Route
+          path="/pokemon"
+          element={
+            <div className="pokemonshop-wrapper">
+              <Sidebar pokemon={pokemonData?.pokemon} />
+              <ItemGrid data={pokemonData?.pokemon} />
+            </div>
+          }
+        />
+      </Routes>
     </>
   );
 }

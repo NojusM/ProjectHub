@@ -21,7 +21,7 @@ function App() {
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/cards" element={<CardGame />} />
           <Route path="/colors" element={<ColorGame />} />
-          <Route path="/pokeshop" element={<Pokeshop />} />
+          <Route path="/pokeshop/*" element={<Pokeshop />} />
           <Route path="*" element={<BadRoute />} />
         </Routes>
       </Suspense>
