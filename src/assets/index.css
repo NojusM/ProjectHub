@@ -17,4 +17,7 @@
   --blue: #039651;
   --red: #4d0505;
   --cyan: #13e7e7;
+  --background: #053538;
+
+  background-color: var(--background);
 }
