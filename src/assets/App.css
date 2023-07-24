@@ -36,6 +36,7 @@
   width: auto;
   font-size: 1.5rem;
   text-align: center;
+  color: black;
   background-color: var(--blue);
   border: 2px dotted var(--red);
   padding: 1rem;
