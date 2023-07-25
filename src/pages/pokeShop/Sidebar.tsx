@@ -7,11 +7,12 @@ interface Props {
 }
 
 export default function Sidebar({ rangesData }: Props) {
+  const validRangesData = rangesData.filter((range) => range.data && range.data.length > 0);
   const [sortAsc, setSortAsc] = useState(true);
   const [ranges, setRanges] = useState<SortRange[]>();
 
   useEffect(() => {
-    const calculatedRanges = rangesData.map((pokemonData) => {
+    const calculatedRanges = validRangesData.map((pokemonData) => {
       const dataMin = Math.min(...pokemonData.data);
       const dataMax = Math.max(...pokemonData.data);
       return {
@@ -47,8 +48,8 @@ export default function Sidebar({ rangesData }: Props) {
           </button>
         </div>
       </div>
-      {ranges?.map((rangeData) => (
-        <div className="sidebar-item">
+      {ranges?.map((rangeData, index) => (
+        <div className="sidebar-item" key={index}>
           <Range data={rangeData} setData={handleRangeDataChange} />
         </div>
       ))}

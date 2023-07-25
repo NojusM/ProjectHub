@@ -16,15 +16,14 @@ export default function PokemonShop() {
     refetchOnReconnect: true,
   });
 
-  if (isLoading) {
-    return <Loading />;
-  }
-
-  if (error) {
-    return <div>Failed to find Pokemon</div>;
-  }
-
   const { prices, baseExps, heights, weights } = useMemo(() => {
+    if (!pokemonData)
+      return {
+        prices: [],
+        baseExps: [],
+        heights: [],
+        weights: [],
+      };
     const pokemon = pokemonData?.pokemon;
     const prices: number[] = pokemon.map((poke: any) => poke.price);
     const baseExps: number[] = pokemon.map((poke: any) => poke.base_experience);
@@ -32,6 +31,14 @@ export default function PokemonShop() {
     const weights: number[] = pokemon.map((poke: any) => poke.weight);
     return { prices, baseExps, heights, weights };
   }, [pokemonData?.pokemon]);
+
+  if (isLoading) {
+    return <Loading />;
+  }
+
+  if (error) {
+    return <div>Failed to find Pokemon</div>;
+  }
 
   return (
     <div className="pokemonshop-wrapper">
