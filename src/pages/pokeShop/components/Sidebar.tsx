@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import Range from "./components/Range";
-import { SortRange } from "../../types/pokeshopTypes";
+import Range from "./Range";
+import { SortRange } from "../../../types/pokeshopTypes";
 
 interface Props {
   rangesData: { data: number[]; title: string; units: string }[];

@@ -1,7 +1,7 @@
 import { useQuery } from "react-query";
 import { getPokemon } from "../api/getPokemon";
 import ItemGrid from "../components/ItemGrid";
-import Sidebar from "../Sidebar";
+import Sidebar from "../components/Sidebar";
 import Loading from "../../../components/Loading";
 import { useMemo } from "react";
 
