@@ -8,30 +8,16 @@ interface Props {
 
 export default function Sidebar({ pokemon }: Props) {
   const [sortAsc, setSortAsc] = useState(true);
-  const [price, setPrice] = useState<SortRange>({
+  const initialSortRange: SortRange = {
     dataMin: 0,
     dataMax: 100000,
     userMin: 0,
     userMax: 100000,
-  });
-  const [baseExp, setBaseExp] = useState<SortRange>({
-    dataMin: 0,
-    dataMax: 100000,
-    userMin: 0,
-    userMax: 100000,
-  });
-  const [height, setHeight] = useState<SortRange>({
-    dataMin: 0,
-    dataMax: 100000,
-    userMin: 0,
-    userMax: 100000,
-  });
-  const [weight, setWeight] = useState<SortRange>({
-    dataMin: 0,
-    dataMax: 100000,
-    userMin: 0,
-    userMax: 100000,
-  });
+  };
+  const [price, setPrice] = useState<SortRange>(initialSortRange);
+  const [baseExp, setBaseExp] = useState<SortRange>(initialSortRange);
+  const [height, setHeight] = useState<SortRange>(initialSortRange);
+  const [weight, setWeight] = useState<SortRange>(initialSortRange);
 
   useEffect(() => {
     const prices: number[] = pokemon.map((poke: any) => poke.price);
@@ -39,46 +25,21 @@ export default function Sidebar({ pokemon }: Props) {
     const heights: number[] = pokemon.map((poke: any) => poke.height);
     const weights: number[] = pokemon.map((poke: any) => poke.weight);
 
-    setPrice(() => {
-      const priceMin = Math.min(...prices);
-      const priceMax = Math.max(...prices);
+    const calculateRange = (data: number[]): SortRange => {
+      const dataMin = Math.min(...data);
+      const dataMax = Math.max(...data);
       return {
-        dataMin: priceMin,
-        dataMax: priceMax,
-        userMin: priceMin,
-        userMax: priceMax,
+        dataMin,
+        dataMax,
+        userMin: dataMin,
+        userMax: dataMax,
       };
-    });
-    setBaseExp(() => {
-      const baseExpMin = Math.min(...baseExps);
-      const baseExpMax = Math.max(...baseExps);
-      return {
-        dataMin: baseExpMin,
-        dataMax: baseExpMax,
-        userMin: baseExpMin,
-        userMax: baseExpMax,
-      };
-    });
-    setHeight(() => {
-      const heightMin = Math.min(...heights);
-      const heightMax = Math.max(...heights);
-      return {
-        dataMin: heightMin,
-        dataMax: heightMax,
-        userMin: heightMin,
-        userMax: heightMax,
-      };
-    });
-    setWeight(() => {
-      const weightMin = Math.min(...weights);
-      const weightMax = Math.max(...weights);
-      return {
-        dataMin: weightMin,
-        dataMax: weightMax,
-        userMin: weightMin,
-        userMax: weightMax,
-      };
-    });
+    };
+
+    setPrice(calculateRange(prices));
+    setBaseExp(calculateRange(baseExps));
+    setHeight(calculateRange(heights));
+    setWeight(calculateRange(weights));
   }, [pokemon]);
 
   return (
