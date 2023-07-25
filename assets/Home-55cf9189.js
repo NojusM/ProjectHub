@@ -1,0 +1,1 @@
+import{j as e}from"./index-c198374f.js";function o(){return e.jsxs("div",{className:"center home",children:[e.jsx("h1",{children:"Hello!"}),e.jsx("div",{className:"image"}),e.jsx("p",{children:"Welcome to my demo project page"}),e.jsx("p",{children:e.jsx("b",{children:"By Nojus Makulavičius"})})]})}export{o as default};
