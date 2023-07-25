@@ -10,14 +10,16 @@ export default function Range({ data, setData }: Props) {
     const value = parseInt(e.target.value);
     if (e.target.name === "min") {
       if (value > data.userMax) {
-        setData(data.title, { ...data, userMax: value, userMin: value });
+        setData(data.title, { ...data, userMin: value, userMax: value });
+      } else {
+        setData(data.title, { ...data, userMin: value });
       }
-      setData(data.title, { ...data, userMin: value });
     } else if (e.target.name === "max") {
       if (value < data.userMin) {
-        setData(data.title, { ...data, userMax: value, userMin: value });
+        setData(data.title, { ...data, userMin: value, userMax: value });
+      } else {
+        setData(data.title, { ...data, userMax: value });
       }
-      setData(data.title, { ...data, userMax: value });
     }
   };
 
