@@ -5,6 +5,17 @@ import Sidebar from "../components/Sidebar";
 import Loading from "../../../components/Loading";
 import { useMemo } from "react";
 
+const DEFAULT_IMG =
+  "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png";
+interface Data {
+  prices: number[];
+  baseExps: number[];
+  heights: number[];
+  weights: number[];
+  sprites: string[];
+  names: string[];
+}
+
 export default function PokemonShop() {
   const {
     data: pokemonData,
@@ -16,20 +27,24 @@ export default function PokemonShop() {
     refetchOnReconnect: true,
   });
 
-  const { prices, baseExps, heights, weights } = useMemo(() => {
+  const { prices, baseExps, heights, weights, sprites, names }: Data = useMemo(() => {
     if (!pokemonData)
       return {
         prices: [],
         baseExps: [],
         heights: [],
         weights: [],
+        sprites: [],
+        names: [],
       };
     const pokemon = pokemonData?.pokemon;
     const prices: number[] = pokemon.map((poke: any) => poke.price);
     const baseExps: number[] = pokemon.map((poke: any) => poke.base_experience);
     const heights: number[] = pokemon.map((poke: any) => poke.height);
     const weights: number[] = pokemon.map((poke: any) => poke.weight);
-    return { prices, baseExps, heights, weights };
+    const sprites: string[] = pokemon.map((poke: any) => poke.sprites.front_default || DEFAULT_IMG);
+    const names: string[] = pokemon.map((poke: any) => poke.name);
+    return { prices, baseExps, heights, weights, sprites, names };
   }, [pokemonData?.pokemon]);
 
   if (isLoading) {
@@ -49,8 +64,19 @@ export default function PokemonShop() {
           { data: heights, title: "Height", units: "dm" },
           { data: weights, title: "Weight", units: "hg" },
         ]}
-      ></Sidebar>
-      <ItemGrid data={pokemonData?.pokemon} />
+      />
+      <ItemGrid
+        gridData={{
+          imgs: sprites,
+          names: names,
+          info: [
+            { value: prices, units: "$" },
+            { value: baseExps, units: "xp" },
+            { value: heights, units: "dm" },
+            { value: weights, units: "hg" },
+          ],
+        }}
+      />
     </div>
   );
 }
