@@ -46,11 +46,7 @@ export default function ItemGrid({ gridData, filter }: Props) {
       </label>
       <ul className="pokemon-grid-wrapper">
         {paginatedData.map((item, index) => (
-          <Link
-            key={`pokemons-${index}`}
-            to={`/pokemon/${encodeURIComponent(item.name)}`}
-            className="pokemon-grid-item"
-          >
+          <Link key={`pokemons-${index}`} to={`/pokeshop/pokemon/${item.name}`} className="pokemon-grid-item">
             <div className="pokemon-content">
               <p>{item.name}</p>
               <img src={item.img} />

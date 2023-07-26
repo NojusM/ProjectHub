@@ -20,7 +20,7 @@ export default function Pokeshop() {
           <Route path="/pokemon" element={<PokemonShop />} />
           <Route path="/berries" element={<BerrieShop />} />
           <Route path="/cart" element={<PokemonCart />} />
-          <Route path="/pokemon/:id" element={<ItemZoom />} />
+          <Route path="/pokemon/:name" element={<ItemZoom />} />
         </Routes>
       </div>
     </QueryClientProvider>
