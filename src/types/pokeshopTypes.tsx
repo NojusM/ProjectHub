@@ -8,9 +8,9 @@ export interface SortRange {
 }
 
 export interface GridData {
-  names: string[];
-  imgs: string[];
-  info: { value: number[]; units: string }[];
+  name: string;
+  img: string;
+  info: { value: number; units: string }[];
 }
 
 export interface RangesData {

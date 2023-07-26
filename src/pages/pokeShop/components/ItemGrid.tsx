@@ -1,27 +1,23 @@
 import { useMemo, useState } from "react";
-import { GridData } from "../../../types/pokeshopTypes";
+import { GridData, SortRange } from "../../../types/pokeshopTypes";
 
 interface Props {
-  gridData: GridData;
+  gridData: GridData[];
+  filter: SortRange[];
 }
 
-export default function ItemGrid({ gridData }: Props) {
+export default function ItemGrid({ gridData, filter }: Props) {
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(10);
 
-  const totalPages = Math.ceil(gridData.imgs.length / itemsPerPage);
+  const totalPages = Math.ceil(gridData.length / itemsPerPage);
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
+
   const paginatedData = useMemo(() => {
-    const paginatedImgs = gridData.imgs.slice(startIndex, endIndex);
-    const paginatedNames = gridData.names.slice(startIndex, endIndex);
-    const paginatedInfo = gridData.info.slice(startIndex, endIndex);
-    return {
-      imgs: paginatedImgs,
-      names: paginatedNames,
-      info: paginatedInfo,
-    };
-  }, [gridData.names, gridData.imgs, gridData.info, startIndex, endIndex]);
+    const paginatedItems = gridData.slice(startIndex, endIndex);
+    return paginatedItems;
+  }, [gridData, startIndex, endIndex]);
 
   return (
     <div className="pokeshop-items">
@@ -35,15 +31,15 @@ export default function ItemGrid({ gridData }: Props) {
         </select>
       </label>
       <ul className="pokemon-grid-wrapper">
-        {paginatedData.imgs.map((imgUrl, index) => (
+        {paginatedData.map((item, index) => (
           <div key={`pokemons-${index}`} className="pokemon-grid-item">
             <div className="pokemon-content">
-              <p>{paginatedData.names[index]}</p>
-              <img src={imgUrl} />
+              <p>{item.name}</p>
+              <img src={item.img} />
               <div className="pokemon-content-info">
-                {gridData.info.map((info, valueIndex) => (
+                {item.info.map((info, valueIndex) => (
                   <p key={`item-${index}-value-${valueIndex}`}>
-                    {info.value[index]} {info.units}
+                    {info.value} {info.units}
                   </p>
                 ))}
               </div>

@@ -54,6 +54,16 @@ export default function PokemonShop() {
     return <div>Failed to find Pokemon</div>;
   }
 
+  const items = sprites.map((sprite, index) => ({
+    img: sprite,
+    name: names[index],
+    info: [
+      { value: prices[index], units: "$" },
+      { value: baseExps[index], units: "xp" },
+      { value: heights[index], units: "dm" },
+      { value: weights[index], units: "hg" },
+    ],
+  }));
   return (
     <Shop
       rangesData={[
@@ -62,16 +72,7 @@ export default function PokemonShop() {
         { data: heights, title: "Height", units: "dm" },
         { data: weights, title: "Weight", units: "hg" },
       ]}
-      gridData={{
-        imgs: sprites,
-        names: names,
-        info: [
-          { value: prices, units: "$" },
-          { value: baseExps, units: "xp" },
-          { value: heights, units: "dm" },
-          { value: weights, units: "hg" },
-        ],
-      }}
+      gridData={items}
     />
   );
 }
