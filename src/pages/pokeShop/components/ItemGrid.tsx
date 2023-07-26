@@ -15,6 +15,9 @@ export default function ItemGrid({ gridData, filter }: Props) {
   const endIndex = startIndex + itemsPerPage;
 
   const paginatedData = useMemo(() => {
+    if (filter.length === 0) {
+      return gridData;
+    }
     const filteredItems = gridData.filter((item) => {
       return item.info.every((infoItem) =>
         filter.some((criteria) => {
