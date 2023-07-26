@@ -15,9 +15,20 @@ export default function ItemGrid({ gridData, filter }: Props) {
   const endIndex = startIndex + itemsPerPage;
 
   const paginatedData = useMemo(() => {
-    const paginatedItems = gridData.slice(startIndex, endIndex);
-    return paginatedItems;
-  }, [gridData, startIndex, endIndex]);
+    const filteredItems = gridData.filter((item) => {
+      return item.info.every((infoItem) =>
+        filter.some((criteria) => {
+          return (
+            infoItem.units === criteria.units &&
+            infoItem.value >= criteria.userMin &&
+            infoItem.value <= criteria.userMax
+          );
+        })
+      );
+    });
+
+    return filteredItems.slice(startIndex, endIndex);
+  }, [gridData, filter, startIndex, endIndex]);
 
   return (
     <div className="pokeshop-items">

@@ -4,9 +4,10 @@ import { RangesData, SortRange } from "../../../types/pokeshopTypes";
 
 interface Props {
   rangesData: RangesData[];
+  setFilter: (updatedSortingFilter: SortRange[]) => void;
 }
 
-export default function Sidebar({ rangesData }: Props) {
+export default function Sidebar({ rangesData, setFilter }: Props) {
   const validRangesData = rangesData.filter((range) => range.data && range.data.length > 0);
   const [sortAsc, setSortAsc] = useState(true);
   const [ranges, setRanges] = useState<SortRange[]>();
@@ -29,6 +30,9 @@ export default function Sidebar({ rangesData }: Props) {
 
   function handleRangeDataChange(title: string, updatedRangeData: SortRange) {
     setRanges((prevRanges) => prevRanges?.map((range) => (range.title === title ? { ...updatedRangeData } : range)));
+    if (ranges) {
+      setFilter(ranges);
+    }
   }
 
   return (
