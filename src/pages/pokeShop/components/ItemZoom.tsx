@@ -1,3 +1,6 @@
+import { useParams } from "react-router-dom";
+
 export default function ItemZoom() {
-  return <div>ItemZoom</div>;
+  const { name } = useParams();
+  return <div>{name}</div>;
 }

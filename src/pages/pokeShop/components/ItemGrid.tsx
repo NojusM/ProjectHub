@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
 import { GridData, SortRange } from "../../../types/pokeshopTypes";
+import { Link } from "react-router-dom";
 
 interface Props {
   gridData: GridData[];
@@ -9,7 +10,6 @@ interface Props {
 export default function ItemGrid({ gridData, filter }: Props) {
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(10);
-
   const totalPages = Math.ceil(gridData.length / itemsPerPage);
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
@@ -43,7 +43,11 @@ export default function ItemGrid({ gridData, filter }: Props) {
       </label>
       <ul className="pokemon-grid-wrapper">
         {paginatedData.map((item, index) => (
-          <div key={`pokemons-${index}`} className="pokemon-grid-item">
+          <Link
+            key={`pokemons-${index}`}
+            to={`/pokemon/${encodeURIComponent(item.name)}`}
+            className="pokemon-grid-item"
+          >
             <div className="pokemon-content">
               <p>{item.name}</p>
               <img src={item.img} />
@@ -55,7 +59,7 @@ export default function ItemGrid({ gridData, filter }: Props) {
                 ))}
               </div>
             </div>
-          </div>
+          </Link>
         ))}
       </ul>
       <div className="pokeshop-buttons">
