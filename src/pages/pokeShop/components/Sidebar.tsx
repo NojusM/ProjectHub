@@ -9,7 +9,6 @@ interface Props {
 
 export default function Sidebar({ rangesData, setFilter }: Props) {
   const validRangesData = rangesData.filter((range) => range.data && range.data.length > 0);
-  const [sortAsc, setSortAsc] = useState(true);
   const [ranges, setRanges] = useState<SortRange[]>();
 
   useEffect(() => {
@@ -37,21 +36,6 @@ export default function Sidebar({ rangesData, setFilter }: Props) {
 
   return (
     <div className="sidebar-wrapper">
-      <div className="sidebar-item">
-        <label>Sort</label>
-        <div className="sort-buttons">
-          <button className={sortAsc ? "button active" : "button"} disabled={sortAsc} onClick={() => setSortAsc(true)}>
-            ASC
-          </button>
-          <button
-            className={sortAsc ? "button" : "button active"}
-            disabled={!sortAsc}
-            onClick={() => setSortAsc(false)}
-          >
-            DESC
-          </button>
-        </div>
-      </div>
       {ranges?.map((rangeData, index) => (
         <div className="sidebar-item" key={index}>
           <Range data={rangeData} setData={handleRangeDataChange} />
