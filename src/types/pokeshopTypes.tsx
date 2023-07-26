@@ -6,3 +6,15 @@ export interface SortRange {
   userMin: number;
   userMax: number;
 }
+
+export interface GridData {
+  names: string[];
+  imgs: string[];
+  info: { value: number[]; units: string }[];
+}
+
+export interface RangesData {
+  data: number[];
+  title: string;
+  units: string;
+}

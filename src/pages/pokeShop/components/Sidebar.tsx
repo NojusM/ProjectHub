@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import Range from "./Range";
-import { SortRange } from "../../../types/pokeshopTypes";
+import { RangesData, SortRange } from "../../../types/pokeshopTypes";
 
 interface Props {
-  rangesData: { data: number[]; title: string; units: string }[];
+  rangesData: RangesData[];
 }
 
 export default function Sidebar({ rangesData }: Props) {

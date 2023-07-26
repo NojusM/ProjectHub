@@ -1,7 +1,8 @@
 import { useMemo, useState } from "react";
+import { GridData } from "../../../types/pokeshopTypes";
 
 interface Props {
-  gridData: { names: string[]; imgs: string[]; info: { value: number[]; units: string }[] };
+  gridData: GridData;
 }
 
 export default function ItemGrid({ gridData }: Props) {
