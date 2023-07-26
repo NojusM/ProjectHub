@@ -16,14 +16,8 @@ export default function Pokeshop() {
         <PokeshopNavbar />
         <Routes>
           <Route path="/" element={<PokemonHome />} />
-        </Routes>
-        <Routes>
           <Route path="/pokemon" element={<PokemonShop />} />
-        </Routes>
-        <Routes>
           <Route path="/berries" element={<BerrieShop />} />
-        </Routes>
-        <Routes>
           <Route path="/cart" element={<PokemonCart />} />
         </Routes>
       </div>
