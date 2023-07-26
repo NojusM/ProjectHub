@@ -1,9 +1,8 @@
 import { useQuery } from "react-query";
 import { getPokemon } from "../api/getPokemon";
-import ItemGrid from "../components/ItemGrid";
-import Sidebar from "../components/Sidebar";
 import Loading from "../../../components/Loading";
 import { useMemo } from "react";
+import Shop from "../components/Shop";
 
 const DEFAULT_IMG =
   "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png";
@@ -56,27 +55,23 @@ export default function PokemonShop() {
   }
 
   return (
-    <div className="pokemonshop-wrapper">
-      <Sidebar
-        rangesData={[
-          { data: prices, title: "Price", units: "$" },
-          { data: baseExps, title: "Base Experience", units: "xp" },
-          { data: heights, title: "Height", units: "dm" },
-          { data: weights, title: "Weight", units: "hg" },
-        ]}
-      />
-      <ItemGrid
-        gridData={{
-          imgs: sprites,
-          names: names,
-          info: [
-            { value: prices, units: "$" },
-            { value: baseExps, units: "xp" },
-            { value: heights, units: "dm" },
-            { value: weights, units: "hg" },
-          ],
-        }}
-      />
-    </div>
+    <Shop
+      rangesData={[
+        { data: prices, title: "Price", units: "$" },
+        { data: baseExps, title: "Base Experience", units: "xp" },
+        { data: heights, title: "Height", units: "dm" },
+        { data: weights, title: "Weight", units: "hg" },
+      ]}
+      gridData={{
+        imgs: sprites,
+        names: names,
+        info: [
+          { value: prices, units: "$" },
+          { value: baseExps, units: "xp" },
+          { value: heights, units: "dm" },
+          { value: weights, units: "hg" },
+        ],
+      }}
+    />
   );
 }
