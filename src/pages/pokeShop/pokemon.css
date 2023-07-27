@@ -17,14 +17,14 @@
   align-items: center;
   gap: 2rem;
   margin: 1rem 0 2rem 0;
-  border: 2px solid white;
+  border-bottom: 2px solid white;
   box-sizing: border-box;
 }
 
 .pokemon-navbar a {
   text-decoration: none;
   font-size: 2.5rem;
-  color: white;
+  color: #dfdddd;
   margin: auto;
   flex: 1;
   text-align: center;
@@ -36,8 +36,11 @@
 }
 
 .pokemon-navbar a:hover {
-  background-color: black;
-  color: var(--white);
+  color: white;
+}
+
+.pokemon-navbar a.active:hover {
+  color: var(--blue);
 }
 
 /* POKEMON SHOP */
