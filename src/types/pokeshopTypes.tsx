@@ -48,7 +48,7 @@ export interface Pokemon {
     generation?: NameUrl;
     types?: { slot?: number; type?: NameUrl }[];
   }[];
-  sprites?: {
+  sprites: {
     front_default?: string;
     front_shiny?: string;
     front_female?: string;
