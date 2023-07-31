@@ -22,7 +22,7 @@ export interface RangesData {
 type NameUrl = { name?: string; url?: string };
 export interface Pokemon {
   id?: number;
-  name?: string;
+  name: string;
   base_experience?: number;
   height?: number;
   is_default?: boolean;
