@@ -242,3 +242,57 @@
   font-size: 4rem;
   text-align: center;
 }
+
+/* ZOOM */
+
+.zoom-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  width: 90%;
+  box-sizing: border-box;
+}
+
+.zoom-header {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+.zoom-image {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.zoom-image-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.zoom-image-selector img {
+  border: 2px solid white;
+  background-color: var(--dark-green);
+}
+
+.zoom-image-selector img.active {
+  background-color: var(--blue);
+}
+
+.zoom-image-selector img:hover {
+  background-color: var(--dimmer-blue);
+}
+
+.zoom-image-selected {
+  width: 40rem;
+  height: 40rem;
+  border: 2px solid white;
+  background-color: var(--dark-green);
+}
+
+.zoom-image-selected img {
+  width: 100%;
+  height: 100%;
+}
