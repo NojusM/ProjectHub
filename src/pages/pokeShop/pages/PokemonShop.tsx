@@ -3,6 +3,7 @@ import { getPokemon } from "../api/getPokemon";
 import Loading from "../../../components/Loading";
 import { useMemo } from "react";
 import Shop from "../components/Shop";
+import { Pokemon } from "../../../types/pokeshopTypes";
 
 const DEFAULT_IMG =
   "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png";
@@ -26,25 +27,30 @@ export default function PokemonShop() {
     refetchOnReconnect: true,
   });
 
-  const { prices, baseExps, heights, weights, sprites, names }: Data = useMemo(() => {
-    if (!pokemonData)
-      return {
-        prices: [],
-        baseExps: [],
-        heights: [],
-        weights: [],
-        sprites: [],
-        names: [],
-      };
-    const pokemon = pokemonData?.pokemon;
-    const prices: number[] = pokemon.map((poke: any) => poke.price);
-    const baseExps: number[] = pokemon.map((poke: any) => poke.base_experience);
-    const heights: number[] = pokemon.map((poke: any) => poke.height);
-    const weights: number[] = pokemon.map((poke: any) => poke.weight);
-    const sprites: string[] = pokemon.map((poke: any) => poke.sprites.front_default || DEFAULT_IMG);
-    const names: string[] = pokemon.map((poke: any) => poke.name);
-    return { prices, baseExps, heights, weights, sprites, names };
-  }, [pokemonData?.pokemon]);
+  const { prices, baseExps, heights, weights, sprites, names }: Data =
+    useMemo(() => {
+      if (!pokemonData)
+        return {
+          prices: [],
+          baseExps: [],
+          heights: [],
+          weights: [],
+          sprites: [],
+          names: [],
+        };
+      const pokemon = pokemonData?.pokemon;
+      const prices: number[] = pokemon.map((poke: Pokemon) => poke.price);
+      const baseExps: number[] = pokemon.map(
+        (poke: Pokemon) => poke.base_experience
+      );
+      const heights: number[] = pokemon.map((poke: Pokemon) => poke.height);
+      const weights: number[] = pokemon.map((poke: Pokemon) => poke.weight);
+      const sprites: string[] = pokemon.map(
+        (poke: Pokemon) => poke.sprites?.front_default || DEFAULT_IMG
+      );
+      const names: string[] = pokemon.map((poke: Pokemon) => poke.name);
+      return { prices, baseExps, heights, weights, sprites, names };
+    }, [pokemonData?.pokemon]);
 
   if (isLoading) {
     return <Loading />;
