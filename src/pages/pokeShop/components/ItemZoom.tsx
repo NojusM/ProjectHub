@@ -12,6 +12,7 @@ export default function ItemZoom() {
     return <div>Not found</div>;
   }
   const [selected, setSelected] = useState(1);
+  const [amount, setAmount] = useState(1);
 
   return (
     <div className="zoom-wrapper">
@@ -38,9 +39,18 @@ export default function ItemZoom() {
           </div>
         </div>
         <div className="zoom-buy">
-          {pokemon.price} <button>Buy</button>
+          <div className="zoom-title">
+            {capitalizeFirstLetter(pokemon.name)}
+          </div>
+          <div className="zoom-price">{pokemon.price} $</div>
+          <div className="zoom-amount">{amount}</div>
+          <button className="button">Add to cart</button>
         </div>
       </div>
     </div>
   );
 }
+
+const capitalizeFirstLetter = (string: string) => {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+};

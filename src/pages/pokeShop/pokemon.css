@@ -258,6 +258,7 @@
 .zoom-header {
   display: grid;
   grid-template-columns: 2fr 1fr;
+  gap: 5rem;
 }
 
 .zoom-image {
@@ -286,8 +287,8 @@
 }
 
 .zoom-image-selected {
-  width: 40rem;
-  height: 40rem;
+  width: 50rem;
+  height: 50rem;
   border: 2px solid white;
   background-color: var(--dark-green);
 }
@@ -295,4 +296,12 @@
 .zoom-image-selected img {
   width: 100%;
   height: 100%;
+}
+
+.zoom-buy {
+  display: flex;
+  flex-direction: column;
+  font-size: 4rem;
+  margin-left: 2rem;
+  width: 100%;
 }
