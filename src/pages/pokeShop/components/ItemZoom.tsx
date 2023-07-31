@@ -11,7 +11,9 @@ export default function ItemZoom() {
     return <div>Pokemon have ran away :{"("}</div>;
   }
 
-  const pokemon = pokemonData?.pokemon.find((poke) => poke.name === name);
+  const pokemon: Pokemon | undefined = pokemonData?.pokemon.find(
+    (poke) => poke.name === name
+  );
 
   return !pokemon ? (
     <div>Pokemon not found!</div>
